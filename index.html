@@ -1,11 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container w3-animate-opacity">
+      <h2 class="w3-center w3-text-teal">Password Generator</h2>
+
+      <label class="w3-margin-top">Password Length</label>
+      <input
+        type="number"
+        id="length"
+        class="w3-input w3-border"
+        min="4"
+        max="32"
+        value="20"
+      />
+
+      <p>
+        <input class="w3-check" type="checkbox" id="uppercase" /> Include
+        Uppercase Letters
+      </p>
+      <p>
+        <input class="w3-check" type="checkbox" id="lowercase" /> Include
+        Lowercase Letters
+      </p>
+      <p>
+        <input class="w3-check" type="checkbox" id="numbers" /> Include Numbers
+      </p>
+      <p>
+        <input class="w3-check" type="checkbox" id="symbols" /> Include Symbols
+      </p>
+
+      <button
+        onclick="generatePassword()"
+        class="w3-button w3-teal w3-margin-top"
+      >
+        Generate Password
+      </button>
+
+      <input
+        type="text"
+        id="password"
+        class="password-box w3-input w3-border w3-margin-top"
+        readonly
+        placeholder="Your Password Will Appear Here"
+      />
+
+      <button
+        onclick="copyPassword()"
+        id="copyBtn"
+        class="w3-button w3-blue w3-margin-top"
+        style="display: none"
+      >
+        Copy Password
+      </button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
 </html>
